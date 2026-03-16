@@ -51,7 +51,7 @@ btnConfirm.addEventListener('click', () => {
         return dbName.includes(inputName);
     });
 
-    if (foundUser && inputName.length >= 2) {
+    if (foundUser && inputName.length >= 5) {
         // --- GIỮ NGUYÊN LOGIC CHO BẠN NỮ ---
         currentUserInSession = foundUser.name.toLowerCase();
         loginModal.style.opacity = '0';
@@ -77,7 +77,7 @@ btnConfirm.addEventListener('click', () => {
             }
         }
 
-        if (foundBoyName && inputName.length >= 2) {
+        if (foundBoyName && inputName.length >= 5) {
             // --- XỬ LÝ CHO BẠN NAM ---
             loginModal.style.opacity = '0';
 
@@ -92,6 +92,7 @@ btnConfirm.addEventListener('click', () => {
 
                 // Giữ cấu trúc nhưng đổi nội dung nút cho nam
                 const closeBtn = document.querySelector('.btn-close-wish');
+                closeBtn.onclick = () => {}
                 if (closeBtn) closeBtn.innerText = "Ok luôn! 👌";
 
                 setTimeout(() => wishCont.classList.add('active-fade'), 10);
