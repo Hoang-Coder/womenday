@@ -1,87 +1,71 @@
 <!DOCTYPE html>
 <html lang="vi">
-
 <head>
-    <meta charset="UTF-8"> 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Azota - Kiểm tra Vật Lý</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="login.css">
 </head>
-
 <body>
-    <div class="overlay" id="login-overlay">
-        <div class="modal">
-            <div class="modal-body">
-                <div class="modal-header">
-                    <i class="fa-solid fa-circle-exclamation alert-icon"></i>
-                    <div class="modal-title">Vui lòng nhập thêm thông tin để bắt đầu bài thi</div>
-                </div>
-                <div class="modal-subtitle">Những thông tin này sẽ giúp giáo viên định danh và chấm điểm cho bạn</div>
-                <div class="input-group">
-                    <div class="input-label">Họ và tên</div>
-                    <input type="text" class="input-field" id="input-name" placeholder="Nhập tên của bạn...">
-                </div>
-                <div class="error-message" id="error-message"
-                    style="display: none; color: #e74c3c; font-size: 12px; margin-top: -10px; margin-bottom: 10px;">
-                    * Không tìm thấy tên trong danh sách lớp
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-cancel">Hủy</button>
-                <button class="btn btn-confirm" id="btn-confirm" disabled>Xác nhận</button>
+
+    <header class="app-header">
+        <i class="fa-solid fa-chevron-left"></i>
+        <div class="header-title">
+            <h1>Bắt đầu thi: KIỂM TRA VẬT LÝ - GIỮA KỲ 2.docx</h1>
+            <span><i class="fa-solid fa-lock" style="font-size: 10px;"></i> azota.vn</span>
+        </div>
+        <i class="fa-solid fa-ellipsis-vertical"></i>
+    </header>
+
+    <div class="main-container">
+        
+        <div class="top-tools">
+            <button class="btn-ad-free">Bỏ quảng cáo</button>
+            <i class="fa-regular fa-bell" style="font-size: 20px; color: #666;"></i>
+            <div class="profile-badge">
+                <i class="fa-regular fa-user"></i>
+                <span class="count">1</span>
             </div>
         </div>
-    </div>
 
-    <div id="wish-container" style="display: none;">
-        <div class="wish-card">
-            <div class="card-decoration top-left">🌸</div>
-            <div class="card-decoration bottom-right">✨</div>
-            <div class="card-inner">
-                <div class="avatar-wrapper">
-                    <img src="./img/heart.png" class="avatar"
-                        onerror="this.src='https://cdn-icons-png.flaticon.com/512/4560/4560115.png'">
+        <div class="exam-card">
+            <span class="exam-filename">GK2 - KIỂM TRA VẬT LÝ - 11.docx</P></span>
+            <span class="exam-code">Mã đề thi: a9voaw <i class="fa-solid fa-qrcode"></i></span>
+
+            <div class="info-list">
+                <div class="info-item">
+                    <div class="info-label"><i class="fa-regular fa-clock"></i> Thời gian làm bài</div>
+                    <div class="info-value">15 phút</div>
                 </div>
-                <h2 id="wish-name"></h2>
-                <div class="divider"></div>
-                <p id="wish-dob"></p>
-                <div id="wish-message" class="wish-message"></div>
-                <button class="btn-close-wish" onclick="openWheel()">Nhận quà với tình yêu ❤️</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="wheel-backdrop">
-        <div class="wheel-stage">
-            <button class="close-wheel-btn" onclick="location.reload()">×</button>
-            <h2 class="wheel-header">Món Quà May Mắn</h2>
-
-            <div class="main-wheel-area">
-                <div class="wheel-pointer"></div>
-
-                <div class="wheel-outer-ring">
-                    <div class="led-lights"></div> <canvas id="wheel-canvas"></canvas>
-                    <div class="wheel-center-hub" id="spin-btn">
-                        <span>SPIN</span>
-                    </div>
+                <div class="info-item">
+                    <div class="info-label"><i class="fa-regular fa-calendar"></i> Thời gian vào thi</div>
+                    <div class="info-value">17/03/2025 08:00</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label"><i class="fa-regular fa-circle-question"></i> Số lượng câu hỏi</div>
+                    <div class="info-value">40</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label"><i class="fa-solid fa-list-ul"></i> Loại đề</div>
+                    <div class="info-value">Trắc nghiệm</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label"><i class="fa-regular fa-user"></i> Tổng lượt đã làm của đề</div>
+                    <div class="info-value">37 lượt</div>
+                </div>
+                <div class="info-item" style="border-bottom: none;">
+                    <div class="info-label"><i class="fa-regular fa-file-lines"></i> Số lượt làm đề còn lại</div>
+                    <div class="info-value">0/1 lượt</div>
                 </div>
             </div>
 
-            <div id="winner-display" class="winner-status">Chạm 'SPIN' để bắt đầu</div>
+            <button class="btn-start">
+                Bắt đầu thi <i class="fa-solid fa-chevron-right"></i>
+            </button>
         </div>
-    </div>
 
-    <div id="winner-announcement" class="winner-fullscreen-overlay">
-        <div class="congrats-card">
-            <h1 class="congrats-head">💖 CHÚC MỪNG!</h1>
-            <p class="congrats-sub">Bạn đã quay trúng người tặng quà:</p>
-            <div id="final-winner-name" class="winner-final-name"></div>
-        </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-    <script src="datastruce.js"></script>
     <script src="app.js"></script>
 </body>
-
 </html>
