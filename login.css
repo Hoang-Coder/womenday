@@ -1,0 +1,377 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.modal {
+    background-color: white;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.alert-icon {
+    color: #f39c12;
+    font-size: 24px;
+    margin-top: 3px;
+}
+
+.modal-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c3e50;
+    line-height: 1.4;
+}
+
+.modal-subtitle {
+    font-size: 13px;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.input-group {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.input-label {
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #666;
+    border-right: 1px solid #ddd;
+    min-width: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.input-field {
+    flex-grow: 1;
+    border: none;
+    padding: 10px;
+    outline: none;
+    font-size: 14px;
+}
+
+.input-group:focus-within {
+    border-color: #f1c40f;
+    box-shadow: 0 0 3px rgba(241, 196, 15, 0.5);
+}
+
+.modal-footer {
+    display: flex;
+    gap: 10px;
+    padding: 0 20px 20px 20px;
+}
+
+.btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-cancel {
+    background-color: #ebedef;
+    color: #7f8c8d;
+}
+
+.btn-confirm {
+    background-color: #adb5bd;
+    color: white;
+}
+
+.btn-confirm:enabled {
+    background-color: #27ae60;
+    /* Màu xanh */
+    color: #fff;
+}
+
+.btn-confirm:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn:enabled:active {
+    opacity: 0.8;
+}
+
+#wish-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 192, 203, 0.3);
+    /* Nền hồng nhạt trong suốt */
+    backdrop-filter: blur(8px);
+    /* Làm mờ hậu cảnh như kính */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.wish-card {
+    background: #ffffff;
+    width: 90%;
+    max-width: 420px;
+    padding: 40px 25px;
+    border-radius: 30px;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 3px solid #f8bbd0;
+    overflow: hidden;
+    animation: slideUp 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hiệu ứng trang trí góc */
+.card-decoration {
+    position: absolute;
+    font-size: 40px;
+    opacity: 0.2;
+}
+
+.top-left {
+    top: -10px;
+    left: -10px;
+}
+
+.bottom-right {
+    bottom: -10px;
+    right: -10px;
+}
+
+.avatar-wrapper {
+    width: 80px;
+    height: 80px;
+    background: #fff0f3;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #ff85a2;
+}
+
+#wish-name {
+    color: #d81b60;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 26px;
+    margin-bottom: 5px;
+}
+
+.divider {
+    width: 50px;
+    height: 3px;
+    background: #ff85a2;
+    margin: 10px auto;
+    border-radius: 2px;
+}
+
+#wish-dob {
+    color: #ffb1c1;
+    font-size: 14px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.wish-message {
+    color: #555;
+    line-height: 1.8;
+    font-size: 16px;
+    background: #fff9fa;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #d81b6044;
+    /* border-left: 4px solid #ff85a2; */
+    box-shadow: -6px 6px 0 -2px #ff85a2, 0 0 10px -5px #4d4d4d2a;
+    /* border-bottom: 2px solid #ffb1c1; */
+    margin-bottom: 25px;
+    text-align: left;
+    min-height: 100px;
+}
+
+.btn-close-wish {
+    background: linear-gradient(45deg, #ff85a2, #ffb1c1);
+    color: white;
+    border: none;
+    padding: 12px 35px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255, 133, 162, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-close-wish:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 133, 162, 0.6);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#wish-container {
+    transition: opacity 0.5s ease, visibility 0.5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Class để kích hoạt hiển thị mượt */
+.active-fade {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Chỉnh lại wish-card để nó bay nhẹ khi xuất hiện */
+.wish-card {
+    transform: scale(0.8);
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#wish-container.active-fade .wish-card {
+    transform: scale(1);
+}
+
+#wheel-backdrop {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(8px);
+    display: none; justify-content: center; align-items: center; z-index: 10000;
+}
+
+/* --- 2. SÂN KHẤU VÒNG QUAY (THE STAGE) --- */
+.wheel-stage {
+    background: #ffffff; width: 95%; max-width: 480px; padding: 30px 20px;
+    border-radius: 35px; position: relative; text-align: center;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+    border: 1px solid #f8bbd0;
+}
+
+.wheel-header { color: #d81b60; font-weight: 900; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 2px; }
+
+/* --- 3. VÒNG QUAY CHÍNH --- */
+.main-wheel-area { position: relative; width: 340px; height: 340px; margin: 0 auto; }
+
+.wheel-outer-ring {
+    position: relative; width: 100%; height: 100%;
+    border-radius: 50%; padding: 8px;
+    background: #fdf2f5; box-shadow: inset 0 2px 5px rgba(0,0,0,0.1), 0 5px 15px rgba(216, 27, 96, 0.2);
+}
+
+#wheel-canvas {
+    width: 100% !important; height: 100% !important; border-radius: 50%; display: block;
+    transition: transform 7s cubic-bezier(0.1, 0, 0, 1); /* Quay mượt hơn */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* --- 4. MŨI TÊN CHỈ (Chuẩn UX) --- */
+.wheel-pointer {
+    position: absolute; right: -20px; top: 50%; transform: translateY(-50%);
+    width: 50px; height: 40px; background: #e91e63;
+    clip-path: polygon(0% 50%, 100% 0%, 100% 100%); z-index: 100;
+    filter: drop-shadow(0 3px 3px rgba(0,0,0,0.2));
+}
+
+/* --- 5. NÚT SPIN Ở TÂM --- */
+.wheel-center-hub {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 70px; height: 70px; background: white; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 900; color: #e91e63; cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2), inset 0 2px 3px rgba(255,255,255,0.8);
+    border: 5px solid #fff0f3; z-index: 11; user-select: none; transition: all 0.2s;
+}
+.wheel-center-hub:active { transform: translate(-50%, -50%) scale(0.92); }
+.wheel-center-hub span { font-size: 14px; letter-spacing: 1px; }
+
+/* --- 6. HỘP TRẠNG THÁI --- */
+.winner-status { margin-top: 25px; font-size: 18px; font-weight: 700; color: #888; min-height: 27px; }
+
+/* --- 7. HIỆU ỨNG ĐÈN CHỚP (ANIMATION) --- */
+.led-lights {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    border-radius: 50%; z-index: 1; pointer-events: none;
+    box-shadow: 0 0 10px rgba(216, 27, 96, 0);
+}
+#wheel-backdrop.spinning .led-lights { animation: ledPulse 0.5s infinite alternate; }
+@keyframes ledPulse {
+    from { box-shadow: 0 0 10px rgba(233, 30, 99, 0.4); }
+    to { box-shadow: 0 0 25px rgba(233, 30, 99, 0.8), inset 0 0 10px rgba(233, 30, 99, 0.3); }
+}
+
+/* --- 8. MÀN HÌNH CHÚC MỪNG (THE FINALE) --- */
+.winner-fullscreen-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, #d81b60, #ad1457);
+    display: none; flex-direction: column; align-items: center; justify-content: center;
+    z-index: 10001; color: white; text-align: center; padding: 20px;
+}
+.congrats-card { animation: congratsPop 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.winner-final-name {
+    font-size: 36px; font-weight: 900; background: white; color: #d81b60;
+    padding: 18px 50px; border-radius: 100px; margin: 30px 0;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+@keyframes congratsPop { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* Nút X đóng */
+.close-wheel-btn {
+    position: absolute; top: 15px; right: 25px; font-size: 30px;
+    background: none; border: none; color: #ddd; cursor: pointer;
+}
