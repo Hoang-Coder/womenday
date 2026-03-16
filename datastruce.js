@@ -20,6 +20,11 @@ let data = [
         message: "Sinh ra vào tháng Ba - tháng của phái đẹp và sự đâm chồi nảy lộc, Thuý Hà chính là hiện thân của sức sống mùa xuân tươi trẻ nhất. Có vẻ như sự tinh khôi của đất trời lúc sang xuân đã thấm đẫm vào tính cách của cậu vậy. Chúc cô gái họ Lê một ngày 8/3 thật hạnh phúc bên gia đình và bạn bè. Hãy cứ luôn yêu đời và giữ mãi nụ cười tỏa nắng ấy, vì đó là món quà tinh thần quý giá nhất của lớp mình."
     },
     {
+        name: "Lê Thuý Hà",
+        dob: "25/03/2009",
+        message: "Sinh ra vào tháng Ba - tháng của phái đẹp và sự đâm chồi nảy lộc, Thuý Hà chính là hiện thân của sức sống mùa xuân tươi trẻ nhất. Có vẻ như sự tinh khôi của đất trời lúc sang xuân đã thấm đẫm vào tính cách của cậu vậy. Chúc cô gái họ Lê một ngày 8/3 thật hạnh phúc bên gia đình và bạn bè. Hãy cứ luôn yêu đời và giữ mãi nụ cười tỏa nắng ấy, vì đó là món quà tinh thần quý giá nhất của lớp mình."
+    },
+    {
         name: "Phạm Nguyễn Ngân Hà",
         dob: "08/12/2009",
         message: "Ngân Hà ơi, người con gái mang tên cả một dải tinh tú lung linh! Dù sinh ra vào tháng 12 mùa đông lạnh giá nhưng trái tim cậu lại cực kỳ ấm áp và bao dung. Chúc cậu ngày 8/3 thật rạng rỡ, mình mong rằng cậu sẽ luôn kiên định với những mục tiêu của mình, tỏa sáng theo cách riêng giữa bầu trời tri thức và mãi là người bạn đồng hành đáng tin cậy của chúng mình nhé."
