@@ -63,7 +63,12 @@ let data = [
         name: "Trần Hà Thanh",
         dob: "10/05/2009",
         message: "Người con gái họ Trần mang tên dòng sông trong xanh ơi, cậu có biết vẻ bình yên của cậu rất đáng quý không? Sinh vào đầu tháng Mười dịu mát, Hà Thanh luôn mang lại cảm giác nhẹ nhàng cho người đối diện. Chúc cậu ngày 8/3 thật hạnh phúc. Mong tâm hồn cậu luôn xanh trong như mặt hồ thu, mọi việc hanh thông và cuộc đời sẽ luôn mỉm cười với một cô gái đáng mến như cậu."
-    }
+    },
+    {
+        name: "Lê Thị Lam",
+        dob: "xx/xx/xxxx",
+        message: "Gửi người con gái họ Lê. Chúc cô 8/3 thật nhiều sức khỏe, luôn vui vẻ và giữ mãi ngọn lửa nhiệt huyết với nghề giáo. (Cô hãy bấm vào vòng quay để tặng bạn Nam ngẫu nhiên 1 điểm trừ nhé 😎)",
+    },
 ];
 const boysData = [
     "Lê Trường An", "Hoàng Kỳ Anh", "Lê Ngọc Anh", "Nguyễn Tuấn Anh",
